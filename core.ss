@@ -4,7 +4,8 @@
         :std/foreign
         :std/iter)
 
-(export cs-open
+(export capstone-error?
+        cs-open
         cs-close
         with-disassembler
         disassemble
