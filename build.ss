@@ -3,10 +3,21 @@
 
 (import :std/make)
 
+(def cc-options
+  "-I/usr/local/include -I/usr/include")
+(def ld-options
+  "-L/usr/local/lib -L/usr/lib -lcapstone")
+
 (def build-spec
   `((gxc: "core"
-          "-cc-options" ,(cppflags "capstone" "")
-          "-ld-options" ,(ldflags "capstone" ""))))
+          "-cc-options" ,cc-options
+          "-ld-options" ,ld-options)
+    (gxc: "arm64"
+          "-cc-options" ,cc-options
+          "-ld-options" ,ld-options)
+    (gxc: "evm"
+          "-cc-options" ,cc-options
+          "-ld-options" ,ld-options)))
 
 (def srcdir
   (path-normalize (path-directory (this-source-file))))
