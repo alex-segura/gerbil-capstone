@@ -15,6 +15,9 @@
     (gxc: "arm64"
           "-cc-options" ,cc-options
           "-ld-options" ,ld-options)
+    (gxc: "arm"
+          "-cc-options" ,cc-options
+          "-ld-options" ,ld-options)
     (gxc: "evm"
           "-cc-options" ,cc-options
           "-ld-options" ,ld-options)))
